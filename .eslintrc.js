@@ -15,7 +15,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
+    ecmaVersion: 2020,
     sourceType: 'module',
   },
   overrides: [
@@ -30,7 +30,11 @@ module.exports = {
   rules: {
     'testing-library/no-render-in-setup': [
       'error',
-      { allowTestingFrameworkSetupHook: 'beforeEach' },
+      {allowTestingFrameworkSetupHook: 'beforeEach'},
     ],
+    'no-unused-vars': [1, {args: 'after-used', varsIgnorePattern: '^_'}],
+    'react/no-unescaped-entities': 0,
+    'no-console': 'off',
+    'react/no-unknown-property': 0,
   },
 };

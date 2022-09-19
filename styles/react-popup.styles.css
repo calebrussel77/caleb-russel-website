@@ -1,0 +1,43 @@
+/* React-js-Popup styles*/
+[role='dialog'].popup-content {
+  @apply m-auto h-screen overflow-hidden border-transparent sm:h-auto md:px-4;
+}
+[data-popup='modal'].popup-overlay {
+  background-color: rgb(0 0 0 / 0.5);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    /* box-shadow : 0 0 0 rgba(241, 241, 241, 0); */
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    /* box-shadow : 0 0 0 rgba(241, 241, 241, 0); */
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    /* box-shadow : 0 0 500px rgba(241, 241, 241, 0); */
+  }
+}
+@keyframes newAnim {
+  from {
+    opacity: 0;
+    transform: translate3d(13px, 0px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.popup-content {
+  -webkit-animation: newAnim 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+  /* -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards; */
+  /* transition-duration:  300ms, */
+}
+/* End React-js-Popup styles*/
