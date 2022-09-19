@@ -1,10 +1,33 @@
 /* eslint-disable @typescript-eslint/ban-types */
+import ProgressBar from '@badrap/bar-of-progress';
 import '@styles/globals.css';
 import type {NextPage} from 'next';
 import {DefaultSeo} from 'next-seo';
 import type {AppProps} from 'next/app';
 import Head from 'next/head';
+import {Router} from 'next/router';
 import type {ReactElement, ReactNode} from 'react';
+
+const progress = new ProgressBar({
+  size: 2,
+  className: 'bar-of-progress',
+  delay: 100,
+  color: '#eab308',
+});
+
+// this fixes safari jumping to the bottom of the page
+// when closing the search modal using the `esc` key
+if (typeof window !== 'undefined') {
+  progress.start();
+  progress.finish();
+}
+
+Router.events.on('routeChangeStart', progress.start);
+Router.events.on('routeChangeComplete', () => {
+  progress.finish();
+  window.scrollTo(0, 0);
+  Router.events.on('routeChangeError', progress.finish);
+});
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;

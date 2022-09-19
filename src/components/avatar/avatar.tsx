@@ -36,11 +36,11 @@ const AvatarInitial: React.FC<AvatarInitialsProps> = ({
   enableTooltip = false,
 }) => {
   return enableTooltip ? (
-    <Tooltip label={name}>
+    <Tooltip label={name} className={clsx('relative', className)}>
       <div
         style={{backgroundColor: stringToHslColor(name, 30, 60)}}
         className={clsx(
-          `flex items-center justify-center overflow-hidden border ring-2 ring-white`,
+          `flex items-center justify-center overflow-hidden ring-2 ring-white`,
           className
         )}
       >
@@ -84,8 +84,9 @@ const Avatar: React.FC<AvatarProps> = ({
 }) => {
   return src ? (
     enableTooltip ? (
-      <Tooltip label={name}>
+      <Tooltip label={name} className={clsx('relative', className)}>
         <Image
+          quality={100}
           src={
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             isPublic ? src : `${process.env.NEXT_BASE_API_URL}/${src}`
@@ -94,21 +95,24 @@ const Avatar: React.FC<AvatarProps> = ({
           placeholder="blur"
           layout="fill"
           blurDataURL={blurDataURL()}
-          className={clsx(className, 'object-cover')}
+          className="object-cover absolute inset-0 object-center"
         />
       </Tooltip>
     ) : (
-      <Image
-        src={
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          isPublic ? src : `${process.env.NEXT_BASE_API_URL}/${src}`
-        }
-        alt={name || ''}
-        placeholder="blur"
-        layout="fill"
-        blurDataURL={blurDataURL()}
-        className={clsx(className, 'object-cover')}
-      />
+      <div className={clsx('relative', className)}>
+        <Image
+          quality={100}
+          src={
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            isPublic ? src : `${process.env.NEXT_BASE_API_URL}/${src}`
+          }
+          alt={name || ''}
+          placeholder="blur"
+          layout="fill"
+          blurDataURL={blurDataURL()}
+          className="object-cover absolute inset-0 object-center"
+        />
+      </div>
     )
   ) : (
     <AvatarInitial {...{enableTooltip, textSize, name, className}} />

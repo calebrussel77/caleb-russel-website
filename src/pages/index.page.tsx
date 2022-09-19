@@ -4,6 +4,10 @@ import Image from 'next/image';
 import {Fragment} from 'react';
 import {HiOutlineMenu, HiX} from 'react-icons/hi';
 
+import {Avatar} from '@components/avatar/avatar';
+
+import {blurDataURL} from '@utils/misc';
+
 const Home: NextPage = () => {
   return (
     <div className="relative overflow-hidden">
@@ -32,7 +36,7 @@ const Home: NextPage = () => {
                 y={0}
                 width={4}
                 height={4}
-                className="text-indigo-900"
+                className="text-yellow-900"
                 fill="currentColor"
               />
             </pattern>
@@ -56,19 +60,17 @@ const Home: NextPage = () => {
             <div className="flex flex-1 items-center">
               <div className="flex w-full items-center justify-between md:w-auto">
                 <a href="#">
-                  <span className="sr-only">Your Company</span>
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-indigo-500">
-                    <Image
-                      layout="fill"
-                      className="absolute inset-0 object-cover"
-                      quality={100}
-                      src="/images/caleb-russel-profil.png"
-                      alt="caleb russel"
-                    />
-                  </div>
+                  <span className="sr-only">Caleb russel</span>
+                  <Avatar
+                    className="h-10 w-10 rounded-full overflow-hidden ring-2 ring-yellow-500"
+                    enableTooltip
+                    isPublic
+                    src="/images/caleb-russel-profil.png"
+                    name="caleb russel"
+                  />
                 </a>
                 <div className="-mr-2 flex items-center md:hidden">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow-500">
                     <span className="sr-only">Open main menu</span>
                     <HiOutlineMenu className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -92,16 +94,15 @@ const Home: NextPage = () => {
             >
               <div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
                 <div className="flex items-center justify-between px-5 pt-4">
-                  <div>
-                    <Image
-                      layout="fill"
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      alt=""
-                    />
-                  </div>
+                  <Avatar
+                    className="h-8 w-8 rounded-full overflow-hidden ring-2 ring-yellow-500"
+                    enableTooltip
+                    isPublic
+                    src="/images/caleb-russel-profil.png"
+                    name="caleb russel"
+                  />
                   <div className="-mr-2">
-                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-yellow-500">
                       <span className="sr-only">Close main menu</span>
                       <HiX className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
@@ -110,7 +111,7 @@ const Home: NextPage = () => {
                 <div></div>
                 <a
                   href="#"
-                  className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
+                  className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-yellow-600 hover:bg-gray-100"
                 >
                   Log in
                 </a>
@@ -123,13 +124,13 @@ const Home: NextPage = () => {
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
               <h1>
-                <span className="inline-block px-3 py-1.5 text-sm font-semibold bg-indigo-500 text-white rounded-full">
+                <span className="inline-block px-3 py-1.5 text-sm font-semibold bg-yellow-500 text-white rounded-full">
                   Coming soon
                 </span>
                 <span className="mt-3 block text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
-                  <span className="block text-gray-100">Caleb russel</span>
-                  <span className="block text-indigo-600">
-                    Developpeur Web Frontend
+                  <span className="block text-gray-100">Caleb Russel</span>
+                  <span className="block text-yellow-600">
+                    Developpeur web frontend
                   </span>
                 </span>
               </h1>
@@ -150,19 +151,19 @@ const Home: NextPage = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className="block w-full rounded-md border-gray-300 py-3 px-2 text-base placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:flex-1"
+                    className="block w-full rounded-md border-gray-300 py-3 px-2 text-base placeholder-gray-500 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:flex-1"
                     placeholder="Entrez votre adresse email"
                   />
                   <button
                     type="submit"
-                    className="mt-3 w-full rounded-md border border-transparent bg-gray-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
+                    className="mt-3 w-full rounded-md border border-transparent bg-gray-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:inline-flex sm:w-auto sm:flex-shrink-0 sm:items-center"
                   >
                     Me notifier
                   </button>
                 </form>
                 <p className="mt-3 text-sm text-gray-500">
                   Je me soucie de la protection de vos données. Lisez ma{' '}
-                  <a href="#" className="font-medium text-indigo-500 underline">
+                  <a href="#" className="font-medium text-yellow-500 underline">
                     politique de confidentialité.
                   </a>
                   .
@@ -171,7 +172,7 @@ const Home: NextPage = () => {
             </div>
             <div className="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center">
               <svg
-                className="absolute top-0 left-1/2 origin-top -translate-x-1/2 -translate-y-8 scale-75 transform sm:scale-100 lg:hidden"
+                className="absolute top-0 left-0 origin-top -translate-x-1/2 -translate-y-8 scale-75 transform sm:scale-100 lg:hidden"
                 width={640}
                 height={784}
                 fill="currentColor"
@@ -192,18 +193,11 @@ const Home: NextPage = () => {
                       y={0}
                       width={4}
                       height={4}
-                      className="text-gray-200"
+                      className="text-yellow-900"
                       fill="currentColor"
                     />
                   </pattern>
                 </defs>
-                <rect
-                  y={72}
-                  width={640}
-                  height={640}
-                  className="text-gray-50"
-                  fill="currentColor"
-                />
                 <rect
                   x={118}
                   width={404}
@@ -214,14 +208,18 @@ const Home: NextPage = () => {
               <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
                 <button
                   type="button"
-                  className="relative block w-full overflow-hidden rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  className="relative block w-full overflow-hidden rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
                 >
-                  <span className="sr-only">Watch our video to learn more</span>
+                  <span className="sr-only">
+                    Watch our video to learn more about me
+                  </span>
                   <div className="relative h-[430px]">
                     <Image
                       className="w-full absolute inset-0 object-cover"
                       layout="fill"
                       quality={100}
+                      placeholder="blur"
+                      blurDataURL={blurDataURL()}
                       src="/images/caleb-russel-profil.png"
                       alt=""
                     />
@@ -231,7 +229,7 @@ const Home: NextPage = () => {
                     aria-hidden="true"
                   >
                     <svg
-                      className="h-20 w-20 text-indigo-500"
+                      className="h-20 w-20 text-yellow-500"
                       fill="currentColor"
                       viewBox="0 0 84 84"
                     >
