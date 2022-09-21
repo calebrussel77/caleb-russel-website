@@ -124,12 +124,12 @@ const Home: NextPage = () => {
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
               <h1>
-                <span className="inline-block px-3 py-1.5 text-sm font-semibold bg-yellow-500 text-white rounded-full">
+                <span className="inline-block px-3 py-1.5 text-sm font-semibold bg-yellow-600 text-white rounded-full">
                   Coming soon
                 </span>
                 <span className="mt-3 block text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
                   <span className="block text-gray-100">Caleb Russel</span>
-                  <span className="block text-yellow-600">
+                  <span className="block text-yellow-500">
                     Developpeur web frontend
                   </span>
                 </span>
